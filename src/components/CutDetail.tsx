@@ -1,6 +1,6 @@
 import React from 'react';
 import type { MeatCut } from '../data/meatData';
-import { Sparkles, ShoppingBag, Layers, MapPin, ChefHat, Info } from 'lucide-react';
+import { Sparkles, ShoppingBag, Layers, MapPin, ChefHat, Info, Ruler } from 'lucide-react';
 
 interface CutDetailProps {
   cut: MeatCut | null;
@@ -74,6 +74,32 @@ export const CutDetail: React.FC<CutDetailProps> = ({ cut, onClose }) => {
             <p className="section-text">{cut.preferredPart}</p>
           </div>
 
+          {/* 맛있는 위치 상세 (Location Details) */}
+          <div className="info-section">
+            <h3 className="section-title">
+              <MapPin size={18} className="section-icon color-location" />
+              맛있는 위치 상세
+            </h3>
+            <ul className="info-list">
+              {cut.locationDetails.map((detail, idx) => (
+                <li key={idx}>{detail}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 뼈·갈비 번호 기준 (Bone Guide) */}
+          <div className="info-section">
+            <h3 className="section-title">
+              <Ruler size={18} className="section-icon color-bone" />
+              뼈·갈비 번호 기준
+            </h3>
+            <ul className="info-list info-list-bone">
+              {cut.boneGuide.map((guide, idx) => (
+                <li key={idx}>{guide}</li>
+              ))}
+            </ul>
+          </div>
+
           {/* 4. 요리 용도 (Cooking Uses) */}
           <div className="info-section">
             <h3 className="section-title">
@@ -100,6 +126,31 @@ export const CutDetail: React.FC<CutDetailProps> = ({ cut, onClose }) => {
                 <li key={idx}>{tip}</li>
               ))}
             </ul>
+          </div>
+
+          {/* 참고 사진/도해 (Reference Images) */}
+          <div className="info-section full-width">
+            <h3 className="section-title">
+              <Info size={18} className="section-icon color-reference" />
+              참고 사진/도해
+            </h3>
+            <div className="reference-cards">
+              {cut.referenceImages.map((img, idx) => (
+                <a
+                  key={idx}
+                  href={img.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="reference-card"
+                >
+                  <div className="reference-card-info">
+                    <span className="reference-card-title">{img.title}</span>
+                    <p className="reference-card-caption">{img.caption}</p>
+                  </div>
+                  <span className="reference-card-link-text">외부 링크 열기 &rarr;</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

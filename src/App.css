@@ -486,6 +486,9 @@
 .color-pin { color: #ff9500; }
 .color-chef { color: #ff3b30; }
 .color-tips { color: #af52de; }
+.color-location { color: #ff5e00; }
+.color-bone { color: #5856d6; }
+.color-reference { color: #0071e3; }
 
 .info-list {
   list-style: none;
@@ -546,6 +549,68 @@
   padding: 4px 10px;
   border-radius: 8px;
   font-weight: 600;
+}
+
+.reference-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.reference-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(0, 113, 227, 0.03);
+  border: 1px solid rgba(0, 113, 227, 0.08);
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.reference-card:hover {
+  transform: translateY(-1px);
+  background-color: rgba(0, 113, 227, 0.06);
+  border-color: rgba(0, 113, 227, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.06);
+}
+
+.reference-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.reference-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+.reference-card-caption {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.reference-card-link-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0071e3;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.reference-card:hover .reference-card-link-text {
+  color: #0056b3;
 }
 
 /* ==================== FOOTER ==================== */

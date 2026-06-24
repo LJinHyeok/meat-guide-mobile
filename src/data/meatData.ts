@@ -10,6 +10,9 @@ export interface MeatCut {
   cookingUses: string[]; // 요리 용도
   tips: string[]; // 조리 및 보관 팁
   usageCategories: string[]; // 매칭 탭용 카테고리: 'grill' | 'soup' | 'stirfry' | 'braise' | 'raw'
+  locationDetails: string[];
+  boneGuide: string[];
+  referenceImages: { title: string; url: string; caption: string }[];
 }
 
 export const beefCuts: MeatCut[] = [
@@ -31,7 +34,24 @@ export const beefCuts: MeatCut[] = [
       '오래 익히면 퍽퍽해지므로 미디움 레어 정도로 빠르게 익히는 것이 좋습니다.',
       '지방이 적어 구울 때 올리브유나 버터를 코팅하여 구우면 풍미가 배가됩니다.'
     ],
-    usageCategories: ['grill', 'stirfry']
+    usageCategories: ['grill', 'stirfry'],
+    locationDetails: [
+      "채끝, 등심 안쪽에 위치하며 척추(요추) 아랫부분을 길게 따라가는 단일 근육입니다.",
+      "움직임이 가장 적은 부위여서 소고기 전체에서 가장 연하고 부드러운 육질을 자랑합니다.",
+      "주변의 겉지방과 두꺼운 막을 걷어내면 매우 곱고 부드러운 순수 살코기 부위가 나옵니다."
+],
+    boneGuide: [
+      "요추(허리뼈) 아래에 파묻혀 위치하여 조리 및 유통 시 소비자가 직접 뼈 번호를 식별하긴 어렵습니다.",
+      "정형적으로는 허리뼈(요추) 1~6번의 복강 안쪽 영역에 해당합니다.",
+      "티본(T-bone) 정형 시, T자형 뼈를 경계로 채끝과 반대편에 붙어 있는 살이 바로 안심입니다."
+],
+    referenceImages: [
+      {
+            "title": "안심 (Tenderloin) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Beef_tenderloin",
+            "caption": "참고용 외부 사진/도해 - 소 안심 부위의 단면 및 정형 상태 정보"
+      }
+]
   },
   {
     id: 'beef-deungsim',
@@ -51,7 +71,24 @@ export const beefCuts: MeatCut[] = [
       '두껍게 썬 등심은 강한 불로 겉면을 빠르게 시어링하여 육즙을 가두어야 맛있습니다.',
       '떡지방(큰 지방 덩어리)은 구울 때 기름이 너무 많이 나오므로 적절히 떼어내고 굽는 것이 좋습니다.'
     ],
-    usageCategories: ['grill', 'stirfry']
+    usageCategories: ['grill', 'stirfry'],
+    locationDetails: [
+      "소의 목 뒤에서부터 허리 전까지 등줄기를 감싸는 가장 넓고 대표적인 부위입니다.",
+      "목심과 맞닿은 윗등심부터 허리로 이어지는 아래등심까지 긴 영역을 포함합니다.",
+      "갈비뼈 바깥쪽을 덮고 있으며 마블링(꽃등심살, 살치살)이 뛰어나 감칠맛이 좋습니다."
+],
+    boneGuide: [
+      "흉추(등뼈)와 갈비뼈가 만나는 지점의 바깥쪽 살로, 등심 정육 상태에서는 뼈가 모두 제거되어 유통됩니다.",
+      "정형상 갈비뼈 1~5번 위를 윗등심, 6~9번 위를 꽃등심, 10~13번 위를 아래등심 영역으로 봅니다.",
+      "갈비 뼈에서 발라내는 늑간살(갈비살)의 위쪽 지붕 역할을 하는 척추 바깥 부위입니다."
+],
+    referenceImages: [
+      {
+            "title": "등심 (Ribeye) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Rib_eye_steak",
+            "caption": "참고용 외부 사진/도해 - 등심(꽃등심/마블링) 부위 이미지"
+      }
+]
   },
   {
     id: 'beef-chaekkeut',
@@ -71,7 +108,24 @@ export const beefCuts: MeatCut[] = [
       '안심보다는 씹는 맛이 있고 등심보다는 기름기가 적어 담백한 스테이크를 원할 때 가장 추천합니다.',
       '양념에 오래 재우기보다 가볍게 시즈닝하여 원육 자체의 맛을 즐기는 것이 좋습니다.'
     ],
-    usageCategories: ['grill']
+    usageCategories: ['grill'],
+    locationDetails: [
+      "아래등심에서 이어져 소 뒷다리(설도) 직전의 허리 부위(요추 영역) 등줄기 바깥쪽을 덮은 살입니다.",
+      "등심보다 지방이 적지만 고기 결이 균일하고 고소한 풍미가 우수해 스테이크로 최고입니다.",
+      "안심과 함께 허리뼈를 둘러싸며, 안심의 바깥쪽(등쪽)을 감싸고 있습니다."
+],
+    boneGuide: [
+      "13번 갈비뼈 끝부분부터 골반(엉덩이뼈)이 시작되는 요추(허리등뼈) 1~6번 주변 영역에 해당합니다.",
+      "구이용 채끝등심은 대개 뼈가 정형 과정에서 깔끔하게 제거되어 뼈가 보이지 않습니다.",
+      "엘본(L-bone)이나 티본(T-bone) 스테이크에서 넓은 면적을 차지하는 부위가 바로 채끝입니다."
+],
+    referenceImages: [
+      {
+            "title": "채끝 (Strip Loin) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Strip_steak",
+            "caption": "참고용 외부 사진/도해 - 채끝 스테이크 및 원육 정형 상태 정보"
+      }
+]
   },
   {
     id: 'beef-moksim',
@@ -91,7 +145,23 @@ export const beefCuts: MeatCut[] = [
       '근육이 질기므로 얇게 썰어 양념에 재워 부드럽게 만들거나, 국이나 탕처럼 오래 끓이는 요리에 적합합니다.',
       '파인애플, 배, 양파 등을 갈아 만든 양념장에 재우면 육질이 연해집니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise']
+    usageCategories: ['soup', 'stirfry', 'braise'],
+    locationDetails: [
+      "머리 뒤편부터 1번 갈비뼈 이전까지 소의 목뼈(경추)를 둘러싸고 있는 두꺼운 부위입니다.",
+      "여러 근육이 뭉쳐 있어 고기 결이 질기지만, 씹을수록 깊고 진한 소고기 본연의 육향이 우러납니다.",
+      "등심의 시작 부위(윗등심)와 경계를 마주하고 있어 안쪽 부위는 비교적 부드럽습니다."
+],
+    boneGuide: [
+      "목뼈에 해당하는 경추 1~7번 주변을 둥글게 둘러싼 부위로, 소비자가 확인 가능한 갈비뼈 번호는 없습니다.",
+      "정형 시 목뼈를 깨끗이 발라낸 뒤 살코기만 모아 슬라이스하여 유통합니다."
+],
+    referenceImages: [
+      {
+            "title": "목심 (Chuck) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Chuck_steak",
+            "caption": "참고용 외부 사진/도해 - 목심 부위 및 척(Chuck) 정형 단면 정보"
+      }
+]
   },
   {
     id: 'beef-apdari',
@@ -110,7 +180,23 @@ export const beefCuts: MeatCut[] = [
       '부채살을 구울 때는 가운데 힘줄 부분을 너무 바짝 익히면 질겨지므로 미디움 정도로 구워 쫄깃하게 즐기는 것이 좋습니다.',
       '꾸리살이나 앞다리살은 결이 단단하므로 장조림이나 국거리로 푹 끓여내면 연해집니다.'
     ],
-    usageCategories: ['grill', 'soup', 'stirfry', 'raw']
+    usageCategories: ['grill', 'soup', 'stirfry', 'raw'],
+    locationDetails: [
+      "어깨뼈(견갑골) 및 앞다리뼈(상완골)를 감싸고 있는 앞쪽 상체 근육군입니다.",
+      "어깨 운동량이 많아 근막과 힘줄이 많지만, 그 중 부채살(낙엽살)은 감칠맛이 아주 뛰어납니다.",
+      "목심 및 갈비의 앞쪽 바깥 면과 경계를 이루고 있습니다."
+],
+    boneGuide: [
+      "어깨 관절을 구성하는 견갑골(부채살이 붙어 있음)과 상완골 주변 부위입니다.",
+      "갈비뼈 번호와 직접 연동되지 않으며, 평평한 견갑골의 안쪽과 바깥쪽 근육을 정형하는 것이 실질적 기준입니다."
+],
+    referenceImages: [
+      {
+            "title": "앞다리 (Flat Iron Steak) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Flat_iron_steak",
+            "caption": "참고용 외부 사진/도해 - 앞다리 부채살(낙엽살) 부위 이미지"
+      }
+]
   },
   {
     id: 'beef-udun',
@@ -129,7 +215,23 @@ export const beefCuts: MeatCut[] = [
       '지방이 거의 없기 때문에 굽거나 구우면 퍽퍽해집니다. 얇게 썰어 전을 부치거나, 결대로 찢는 장조림, 혹은 생으로 먹는 육회에 사용하십시오.',
       '육전용은 칼집을 촘촘히 내어 사용하면 훨씬 부드럽게 씹힙니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise', 'raw']
+    usageCategories: ['soup', 'stirfry', 'braise', 'raw'],
+    locationDetails: [
+      "소의 엉덩이 안쪽 부위로 지방이 극히 적고 순수한 살코기로만 채워진 덩어리 고기입니다.",
+      "설도와 붙어 있으며 운동량이 적당해 고기 결이 비교적 일정하고 부드러운 편입니다.",
+      "홍두깨살은 우둔 옆에 붙은 둥글고 긴 원통형 부위로 결이 아주 선명합니다."
+],
+    boneGuide: [
+      "소 뒷다리 관절을 이루는 대퇴골(넓적다리뼈) 안쪽과 골반뼈 아래쪽에 밀착되어 있습니다.",
+      "소비자가 볼 수 있는 뼈 번호나 갈비 번호는 없으며, 대퇴골 뼈를 기준으로 살을 발라내어 정육을 얻습니다."
+],
+    referenceImages: [
+      {
+            "title": "우둔 (Inside Round) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Rump_steak",
+            "caption": "참고용 외부 사진/도해 - 우둔(Rump) 및 홍두깨살 부위 정보"
+      }
+]
   },
   {
     id: 'beef-seoldo',
@@ -148,7 +250,23 @@ export const beefCuts: MeatCut[] = [
       '설깃살은 조금 질긴 편이므로 불고기나 국거리로 얇게 슬라이스하거나 푹 끓여 드시는 것을 권장합니다.',
       '도가니살은 도가니탕의 쫀득한 연골 부위와 훌륭한 조화를 이룹니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise', 'raw']
+    usageCategories: ['soup', 'stirfry', 'braise', 'raw'],
+    locationDetails: [
+      "소 뒷다리 엉덩이 바깥쪽 및 아래쪽에 위치한 넓은 근육군입니다. 채끝, 우둔과 인접합니다.",
+      "보섭살, 설깃살, 도가니살 등 여러 세부 근육이 모여 있어 부위별로 질감이 다릅니다.",
+      "지방이 적어 담백하지만 우둔보다는 비교적 고기 결이 다채롭고 씹는 맛이 있습니다."
+],
+    boneGuide: [
+      "뒷다리 골반뼈(장골, 좌골)와 대퇴골의 바깥쪽 및 엉덩이 관절 부위를 감싸는 부위입니다.",
+      "갈비뼈 번호와는 관련이 없으며 골반뼈 형태와 관절 구성을 기준으로 분할 정형됩니다."
+],
+    referenceImages: [
+      {
+            "title": "설도 (Sirloin/Outer Rump) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Beef_cuts",
+            "caption": "참고용 외부 사진/도해 - 소 뒷다리 설도 부위 정형 정보"
+      }
+]
   },
   {
     id: 'beef-yangji',
@@ -168,7 +286,24 @@ export const beefCuts: MeatCut[] = [
       '양지머리는 덩어리째 물에 넣어 오랜 시간 푹 삶아 육수를 내고 식힌 뒤 얇게 썰어 편육이나 국거리 고명으로 올리면 좋습니다.',
       '차돌박이는 불판에 닿자마자 익으므로 오버쿡되지 않게 살짝 구워 바로 드세요.'
     ],
-    usageCategories: ['grill', 'soup']
+    usageCategories: ['grill', 'soup'],
+    locationDetails: [
+      "소의 목 밑 가슴부터 배 밑 아랫부분까지 복부를 덮는 넓은 부위입니다.",
+      "지방과 살코기가 층을 이루어 육즙이 고소하며 차돌박이, 업진살(우삼겹), 치마살 등을 포함합니다.",
+      "갈비 부위의 아랫부분과 겹쳐 있어 깊고 진한 기름 감칠맛이 특징입니다."
+],
+    boneGuide: [
+      "가슴 정중앙의 흉골(가슴뼈) 및 1~13번 갈비뼈 끝부분부터 복부 전반에 걸쳐 있습니다.",
+      "차돌박이는 흉골(가슴뼈) 끝부분의 단단한 연골(물연골)에 결합된 특이한 뼈 주변 살입니다.",
+      "소비자가 구매하는 국거리 양지에는 뼈가 전혀 포함되지 않지만 가슴뼈와 연결된 결이 굵은 고기입니다."
+],
+    referenceImages: [
+      {
+            "title": "양지 (Brisket) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Brisket",
+            "caption": "참고용 외부 사진/도해 - 양지머리 및 차돌박이 부위 단면"
+      }
+]
   },
   {
     id: 'beef-galbi',
@@ -188,7 +323,24 @@ export const beefCuts: MeatCut[] = [
       '갈비찜이나 탕을 할 때는 뼈에서 핏물을 충분히 빼주어야 잡내가 나지 않습니다 (찬물에 최소 1~2시간 담그기).',
       '근막(질긴 껍질) 부분에 격자무늬 칼집을 깊게 넣어주면 부드러워집니다.'
     ],
-    usageCategories: ['grill', 'soup', 'braise']
+    usageCategories: ['grill', 'soup', 'braise'],
+    locationDetails: [
+      "소의 갈비뼈 주변을 둘러싼 고기로 마블링과 쫀득한 근막이 조화를 이루는 최고급 구이 및 찜 부위입니다.",
+      "갈비뼈 안쪽과 뼈 사이에 낀 살(늑간살)을 포함하여 뜯는 맛과 깊은 감칠맛이 좋습니다.",
+      "등심 및 양지 부위와 위아래로 마주보고 있는 소의 가슴 핵심부입니다."
+],
+    boneGuide: [
+      "소의 갈비뼈는 총 13대로 이루어져 있습니다.",
+      "도축 및 정형 기준에 따라 조금 다르지만 보통 1~5번 뼈는 본갈비, 6~8번 뼈는 꽃갈비, 9~13번 뼈는 참갈비로 설명됩니다.",
+      "뼈 간격은 앞쪽인 본갈비가 넓고 뒤쪽으로 갈수록 점차 좁아지며, 마구리는 갈비뼈 끝의 비정형 뼈 부위입니다."
+],
+    referenceImages: [
+      {
+            "title": "소갈비 (Beef Ribs) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Beef_ribs",
+            "caption": "참고용 외부 사진/도해 - 소갈비 부위와 늑골 뼈 정형 상태"
+      }
+]
   },
   {
     id: 'beef-satae',
@@ -207,7 +359,23 @@ export const beefCuts: MeatCut[] = [
       '압력밥솥을 사용하거나 1시간 이상 뭉근히 끓여주어야 콜라겐이 부드러워져 특유의 쫀득하고 찰진 맛이 살아납니다.',
       '수육으로 먹을 때는 푹 삶은 고기를 완전히 식힌 후에 썰어야 모양이 부서지지 않고 예쁘게 썰어집니다.'
     ],
-    usageCategories: ['soup', 'braise']
+    usageCategories: ['soup', 'braise'],
+    locationDetails: [
+      "앞다리와 뒷다리의 무릎 및 팔꿈치 아래 발목 정강이 쪽에 해당하는 단단한 근육군입니다.",
+      "운동량이 매우 많아 지방이 없고 질기지만 콜라겐과 젤라틴 힘줄이 풍부해 쫀득합니다.",
+      "특히 사태 한가운데 숨겨진 아롱사태는 쫄깃하고 투명한 결이 돋보입니다."
+],
+    boneGuide: [
+      "앞다리의 요골/척골, 뒷다리의 경골(정강이뼈)을 둥글게 둘러싸고 있는 근육입니다.",
+      "갈비뼈 번호와 무관하며, 정강이 통뼈를 기준으로 힘줄이 사방으로 결합되어 정형됩니다."
+],
+    referenceImages: [
+      {
+            "title": "사태 (Beef Shank) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Beef_shanks",
+            "caption": "참고용 외부 사진/도해 - 아롱사태 및 사태 정육 정보"
+      }
+]
   }
 ];
 
@@ -230,7 +398,24 @@ export const porkCuts: MeatCut[] = [
       '구울 때 기름이 많이 나오므로 미나리, 김치, 마늘 등과 함께 구워 기름을 흡수시키면 느끼함을 잡고 감칠맛을 높일 수 있습니다.',
       '보쌈용 통삼겹을 삶을 때는 된장, 통후추, 대파, 커피 가루 등을 넣어 누린내를 제거해 줍니다.'
     ],
-    usageCategories: ['grill', 'soup', 'stirfry', 'braise']
+    usageCategories: ['grill', 'soup', 'stirfry', 'braise'],
+    locationDetails: [
+      "돼지의 갈비 부분 아래부터 뒷다리 직전까지 복부 밑바닥을 덮는 살코기와 지방의 다층 부위입니다.",
+      "갈비뼈 주변에서 나온 오돌뼈(연골)가 박혀 있는 앞삼겹 부위가 육질이 가장 좋습니다.",
+      "등가슴 쪽의 등심 아랫부분에 위치하여 기름지고 고소한 맛을 냅니다."
+],
+    boneGuide: [
+      "돼지는 품종에 따라 갈비뼈가 보통 14~15개 존재하며, 삼겹살은 약 5~6번 갈비뼈 부근부터 마지막 갈비뼈 밑 복부 영역에 해당합니다.",
+      "삼겹살에서 흔히 볼 수 있는 오돌뼈는 갈비뼈와 연결된 늑연골(물연골) 부위입니다.",
+      "오돌뼈가 위치한 부분이 갈비뼈와 인접한 앞삼겹으로, 지방과 살코기의 밸런스가 뛰어나 맛있습니다."
+],
+    referenceImages: [
+      {
+            "title": "삼겹살 (Pork Belly) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_belly",
+            "caption": "참고용 외부 사진/도해 - 삼겹살 부위 및 지방 층 분포 양상"
+      }
+]
   },
   {
     id: 'pork-moksal',
@@ -250,7 +435,24 @@ export const porkCuts: MeatCut[] = [
       '캠핑 등 직화 구이를 할 때는 삼겹살보다 기름이 덜 떨어져 그을음이 덜 생기는 목살이 훨씬 적합합니다.',
       '두껍게 칼집을 넣어 허브솔트를 뿌린 뒤 구워내면 속까지 부드럽게 잘 익습니다.'
     ],
-    usageCategories: ['grill', 'soup', 'stirfry']
+    usageCategories: ['grill', 'soup', 'stirfry'],
+    locationDetails: [
+      "돼지의 목덜미부터 윗등심이 시작되는 4~5번 갈비뼈 전까지의 등쪽 목 근육입니다.",
+      "적당한 운동량 덕분에 굵고 붉은 근육 사이에 그물망 같은 지방이 고루 박혀 매우 담백하고 고소합니다.",
+      "머리뼈(두개골) 및 앞다리 어깨 부위와 마주보고 있습니다."
+],
+    boneGuide: [
+      "목뼈(경추 1~7번)와 등뼈(흉추)의 1~4번 갈비뼈 위쪽 등선을 덮는 근육군입니다.",
+      "정육점 등에서 판매하는 목심 살코기 부위에는 뼈가 모두 발라져 뼈가 포함되어 있지 않습니다.",
+      "뼈와 인접한 부위로 등심보다 뼈 제거 과정에서 뼈 찌꺼기 등을 주의 깊게 손질하게 됩니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 목살 (Pork Collar) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_collar",
+            "caption": "참고용 외부 사진/도해 - 돼지 목살 부위 이미지"
+      }
+]
   },
   {
     id: 'pork-deungsim',
@@ -269,7 +471,24 @@ export const porkCuts: MeatCut[] = [
       '지방이 거의 없기 때문에 고기 망치 등으로 두드려 연육 하거나, 튀김 옷이나 양념 소스로 수분을 보호하며 요리해야 퍽퍽해지지 않습니다.',
       '잡채나 탕수육을 할 때는 고기 결 방향으로 길게 썰어야 조리 후 부서지지 않습니다.'
     ],
-    usageCategories: ['stirfry', 'braise']
+    usageCategories: ['stirfry', 'braise'],
+    locationDetails: [
+      "돼지의 목심 뒤쪽부터 뒷다리(골반) 직전까지 등줄기를 따라 길게 자리한 단일 근육입니다.",
+      "운동량이 적어 지방이 거의 없고 고기 결이 매우 부드러워 돈가스용으로 주로 선호됩니다.",
+      "등갈비 부위의 바깥쪽에 붙은 두툼한 살코기 부분입니다."
+],
+    boneGuide: [
+      "흉추(등뼈) 5번 갈비뼈 부근부터 요추(허리등뼈) 전체를 둘러싼 척추 바깥 부위입니다.",
+      "갈비뼈 5번부터 마지막 갈비뼈(14~15번)까지의 등줄기 등뼈 뼈대를 따라 길게 덮여 있습니다.",
+      "돈마호크(뼈등심) 정형 시에는 등심 끝에 갈비뼈가 일부 붙어서 판매되기도 합니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 등심 (Pork Loin) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_loin",
+            "caption": "참고용 외부 사진/도해 - 돼지 등심 부위 정형"
+      }
+]
   },
   {
     id: 'pork-ansim',
@@ -288,7 +507,24 @@ export const porkCuts: MeatCut[] = [
       '돈카츠로 조리할 때 저온에서 천천히 튀겨 겉은 바삭하고 속은 핑크빛 미디엄 웰던 상태로 익히면 닭고기 가슴살보다 훨씬 촉촉하고 부드럽습니다.',
       '장조림을 할 때는 결대로 잘 찢어지므로 푹 삶은 후 뜨거울 때 찢어 양념장에 조려 줍니다.'
     ],
-    usageCategories: ['stirfry', 'braise']
+    usageCategories: ['stirfry', 'braise'],
+    locationDetails: [
+      "돼지 등심의 아랫부분, 즉 복강(허리등뼈) 안쪽에 매달려 있는 가늘고 긴 원통 모양 근육입니다.",
+      "움직임이 거의 없는 부위라 지방이 없으면서도 촉촉함과 극상의 부드러움을 동시에 제공합니다.",
+      "장기의 보호를 받으며 척추 뼈 안쪽에 깊숙이 숨어 있어 희소성이 높습니다."
+],
+    boneGuide: [
+      "마지막 갈비뼈 부근에서부터 요추(허리뼈) 1~6번 아래 복강 안쪽에 밀착되어 있습니다.",
+      "뼈와 맞닿는 부위이나 직접적으로 외부에 노출되는 단단한 뼈는 정형 시 완전히 제거됩니다.",
+      "소비자가 정육을 구매할 때는 뼈가 전혀 없는 순수 근육 다발 형태로 보게 됩니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 안심 (Pork Tenderloin) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_tenderloin",
+            "caption": "참고용 외부 사진/도해 - 돼지 안심 부위 정육 정보"
+      }
+]
   },
   {
     id: 'pork-apdari',
@@ -307,7 +543,23 @@ export const porkCuts: MeatCut[] = [
       '불고기나 제육볶음용으로 쓸 때는 양념이 잘 배도록 얇게 써는 것이 조리 후 질기지 않고 맛있습니다.',
       '수육을 만들 때는 삼겹살보다 덜 느끼해 담백하게 먹기 좋으며, 푹 삶아 얇게 썰어내는 것이 비법입니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise']
+    usageCategories: ['soup', 'stirfry', 'braise'],
+    locationDetails: [
+      "돼지의 앞다리 어깨뼈(견갑골)와 다리뼈(상완골) 주변을 감싸고 있는 큰 근육들입니다.",
+      "앞다리의 활발한 운동 덕분에 고기 결이 탄력 있고 쫄깃하며 육향이 짙습니다.",
+      "목살 및 삼겹살의 앞부분과 직접 닿아 연결되어 있습니다."
+],
+    boneGuide: [
+      "부채 모양의 어깨뼈(견갑골)와 앞다리 지지용 상완골 주변에 단단히 결합되어 있습니다.",
+      "도축 정형 시 갈비뼈 1~4번 앞쪽의 바깥쪽 면에서 발라내므로, 뼈의 위치상 갈비 앞부분과 가깝습니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 앞다리 (Pork Shoulder) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_shoulder",
+            "caption": "참고용 외부 사진/도해 - 돼지 앞다리 어깨살 부위 정보"
+      }
+]
   },
   {
     id: 'pork-dwdari',
@@ -326,7 +578,23 @@ export const porkCuts: MeatCut[] = [
       '기름기가 거의 없어 고열로 오래 구우면 딱딱해지므로 찌개나 카레에 넣어 뭉근히 끓이거나, 전분을 입혀 튀겨내는 요리에 유용합니다.',
       '불고기로 조리 시 배즙이나 청주 등에 연육 작업을 충분히 한 뒤 양념에 재우는 것이 핵심입니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise']
+    usageCategories: ['soup', 'stirfry', 'braise'],
+    locationDetails: [
+      "돼지 엉덩이와 넓적다리를 구성하는 가장 넓은 면적의 붉은 살코기 부위입니다.",
+      "지방이 적어 수분이 많고 담백하며 육가공용 하몽이나 햄 제조에 필수적입니다.",
+      "등심 및 삼겹살의 뒷부분, 골반 근처에서 이어지는 하체 부위입니다."
+],
+    boneGuide: [
+      "골반뼈(장골, 치골) 및 대퇴골(뒷다리뼈)을 둘러싸고 발목 아랫뼈(경골) 부근까지 이어집니다.",
+      "소비자가 볼 수 있는 갈비뼈나 척추뼈 등의 기준 번호는 없으며 대퇴골 주변 근육 형태로 정형합니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 뒷다리 (Pork Leg/Ham) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_leg",
+            "caption": "참고용 외부 사진/도해 - 돼지 뒷다리 볼기살 및 하몽 부위 정보"
+      }
+]
   },
   {
     id: 'pork-galbi',
@@ -346,7 +614,24 @@ export const porkCuts: MeatCut[] = [
       '뼈에서 핏물을 깨끗이 제거한 후 끓는 물에 향신채와 함께 한 번 데쳐내어 첫 물을 버려주어야 잡내 없는 깔끔한 요리가 완성됩니다.',
       '양념에 재우기 전에 고기에 칼집을 깊게 넣어주면 간이 깊숙이 잘 뱁니다.'
     ],
-    usageCategories: ['grill', 'soup', 'braise']
+    usageCategories: ['grill', 'soup', 'braise'],
+    locationDetails: [
+      "돼지의 갈비뼈 주변을 감싸는 살코기 골격으로 깊은 지방 맛과 근막의 쫀득함이 돋보이는 부위입니다.",
+      "목살 아랫부분과 앞다리 윗부분 사이에 끼어 있어 지방과 육즙이 고루 섞여 있습니다.",
+      "뼈 등갈비(Baby Back Ribs) 부위는 척추와 가깝고, 일반 참갈비 부위는 배 쪽에 가깝습니다."
+],
+    boneGuide: [
+      "돼지는 약 14~15대의 갈비뼈를 가지고 있으며 보통 앞쪽의 1~5번 갈비뼈 부위를 돼지갈비(본갈비)로 주로 정형합니다.",
+      "뼈 간격은 앞부분이 비교적 일정하고 단단하며 뒤로 갈수록 좁아지고 연골층이 두껍게 발달합니다.",
+      "등뼈 쪽 갈비뼈를 길게 잘라낸 것을 등갈비, 삼겹살 부근의 갈비뼈 밑 연골을 오돌뼈라 부릅니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지갈비 (Pork Ribs) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_ribs",
+            "caption": "참고용 외부 사진/도해 - 돼지갈비(Ribs) 및 등갈비 뼈 분포 정보"
+      }
+]
   },
   {
     id: 'pork-hangjeong',
@@ -365,7 +650,23 @@ export const porkCuts: MeatCut[] = [
       '지방 함량이 높으므로 바짝 구워 겉면을 크리스피하게 만들면 아삭한 식감과 기름진 고소함을 가장 맛있게 느낄 수 있습니다.',
       '와사비나 초간장 소스, 겉절이무침과 곁들이면 느끼함을 없애 줍니다.'
     ],
-    usageCategories: ['grill']
+    usageCategories: ['grill'],
+    locationDetails: [
+      "돼지 목덜미 아래(턱밑)부터 앞다리 어깨 부분까지 이어지는 작은 쐐기 모양의 특수부위입니다.",
+      "살코기 틈새마다 하얗고 미세한 마블링이 가득 차 있어 사각거리는 특이한 저작감이 있습니다.",
+      "앞다리살 상단 및 목살의 아랫부분 경계선과 맞물려 있습니다."
+],
+    boneGuide: [
+      "돼지 턱뼈(하악골) 아래에서부터 앞다리 견갑골 시작 지점 사이에 분포하는 기름진 부위입니다.",
+      "직접적으로 갈비뼈나 큰 관절뼈가 관통하지 않는 살코기로, 림프선과 함께 위치해 정형 시 세밀하게 잘라냅니다."
+],
+    referenceImages: [
+      {
+            "title": "항정살 (Pork Jowl) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_jowl",
+            "caption": "참고용 외부 사진/도해 - 항정살 및 턱살 부위 정형 정보"
+      }
+]
   },
   {
     id: 'pork-gabeuri',
@@ -384,7 +685,23 @@ export const porkCuts: MeatCut[] = [
       '지방이 얇게 둘러싸고 있어 구웠을 때 수분이 날아가지 않아 부드러움이 오래 유지됩니다.',
       '구이 시 소금만 살짝 찍어 고유의 진한 육향을 느껴보세요.'
     ],
-    usageCategories: ['grill', 'soup']
+    usageCategories: ['grill', 'soup'],
+    locationDetails: [
+      "돼지 등심 윗부분(목심과 가까운 등 부분)을 얇게 덮고 있는 손바닥 크기 정도의 특수부위입니다.",
+      "정식 정형 명칭은 등심덧살로, 붉은색 살코기와 얇은 비계막이 감싸고 있어 촉촉하고 아주 쫄깃합니다.",
+      "등줄기 등심의 가장자리와 목살의 연결 부위에 위치합니다."
+],
+    boneGuide: [
+      "척추 등뼈(흉추) 8~12번 부근 등심 상단을 담요처럼 덮고 있는 근육층입니다.",
+      "등뼈 바로 옆에 긴 띠 형태로 붙어 있어 뼈와 매우 밀접하지만 소비자 정육에는 뼈가 전혀 없습니다."
+],
+    referenceImages: [
+      {
+            "title": "가브리살 (Pork Cuts) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_cuts",
+            "caption": "참고용 외부 사진/도해 - 가브리살 및 돼지고기 분할 정보"
+      }
+]
   },
   {
     id: 'pork-satae',
@@ -403,6 +720,22 @@ export const porkCuts: MeatCut[] = [
       '질긴 부위이므로 찌개나 찜으로 조리 시 약불에서 오랜 시간 푸욱 끓여 고기가 스스로 부스러질 정도로 삶아주어야 맛있습니다.',
       '묵은지와 함께 푹 쪄내는 사태 김치찜으로 요리하면 양념이 쏙 배어 훌륭한 밥반찬이 됩니다.'
     ],
-    usageCategories: ['soup', 'stirfry', 'braise']
+    usageCategories: ['soup', 'stirfry', 'braise'],
+    locationDetails: [
+      "앞다리와 뒷다리의 팔꿈치/무릎관절 하단부터 발목 직전까지의 장딴지 근육 부위입니다.",
+      "다리 근육 특유의 탄력과 젤라틴, 콜라겐 다발이 뭉쳐 있어 씹을수록 아삭하고 쫄깃합니다.",
+      "족발 요리 시 다리뼈와 함께 붙어 삶아지는 핵심 부위입니다."
+],
+    boneGuide: [
+      "앞다리의 요골/척골, 뒷다리의 경골(정강이뼈)을 둥글고 팽팽하게 휘감고 있는 형태입니다.",
+      "갈비뼈 번호와 무관하며 정강이 관절 통뼈를 중심으로 강하게 밀착된 힘줄과 근육 구조가 특징입니다."
+],
+    referenceImages: [
+      {
+            "title": "돼지 사태 (Pork Shanks) 위키미디어 자료",
+            "url": "https://commons.wikimedia.org/wiki/Category:Pork_shanks",
+            "caption": "참고용 외부 사진/도해 - 돼지 사태 및 정강이 정육 이미지"
+      }
+]
   }
 ];

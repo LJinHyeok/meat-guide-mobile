@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">고기부위 가이드</string>
+    <string name="title_activity_main">고기부위 가이드</string>
+    <string name="package_name">com.jinhy.meatguide</string>
+    <string name="custom_url_scheme">com.jinhy.meatguide</string>
+</resources>

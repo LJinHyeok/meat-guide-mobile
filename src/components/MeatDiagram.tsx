@@ -197,7 +197,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 목심 (Chuck) */}
               <path
-                d="M 100,175 C 95,145 105,125 135,95 C 160,95 185,98 185,98 C 185,98 185,140 178,180 C 178,180 155,198 140,208 C 120,212 105,195 100,175 Z"
+                d="M 100,175 C 115,120 125,95 135,95 C 160,95 185,98 185,98 L 180,180 L 140,210 C 120,210 110,190 100,175 Z"
                 style={getPathStyles('beef-moksim')}
                 onClick={() => onSelectCut('beef-moksim')}
                 onKeyDown={(e) => {
@@ -214,7 +214,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 등심 (Loin) */}
               <path
-                d="M 187,98 C 240,93 285,92 330,92 C 330,92 332,120 330,155 C 330,155 260,165 180,180 C 180,180 187,140 187,98 Z"
+                d="M 185,98 C 240,93 285,92 330,92 L 330,155 C 280,162 230,170 180,180 L 185,98 Z"
                 style={getPathStyles('beef-deungsim')}
                 onClick={() => onSelectCut('beef-deungsim')}
                 onKeyDown={(e) => {
@@ -231,7 +231,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 채끝 (Striploin) */}
               <path
-                d="M 333,92 C 365,92 395,95 430,98 C 430,98 430,120 427,140 C 400,147 365,152 333,155 L 333,92 Z"
+                d="M 330,92 C 365,92 395,95 430,98 L 430,140 C 400,145 365,150 330,155 L 330,92 Z"
                 style={getPathStyles('beef-chaekkeut')}
                 onClick={() => onSelectCut('beef-chaekkeut')}
                 onKeyDown={(e) => {
@@ -248,7 +248,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 안심 (Tenderloin) */}
               <path
-                d="M 333,158 C 360,152 390,145 422,143 C 425,147 420,165 415,175 C 385,182 355,185 333,185 C 330,175 330,165 333,158 Z"
+                d="M 330,155 C 365,150 400,145 430,140 L 425,175 C 395,178 360,180 330,180 L 330,155 Z"
                 style={getPathStyles('beef-ansim')}
                 onClick={() => onSelectCut('beef-ansim')}
                 onKeyDown={(e) => {
@@ -265,7 +265,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 갈비 (Rib) */}
               <path
-                d="M 178,183 C 245,168 285,158 327,158 C 327,158 327,195 327,230 C 290,235 240,240 210,242 L 178,183 Z"
+                d="M 180,180 C 230,170 280,162 330,155 L 330,180 C 330,180 330,230 330,230 C 290,235 250,240 210,242 L 180,180 Z"
                 style={getPathStyles('beef-galbi')}
                 onClick={() => onSelectCut('beef-galbi')}
                 onKeyDown={(e) => {
@@ -282,7 +282,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 앞다리 (Blade/Shoulder) */}
               <path
-                d="M 137,211 C 150,201 168,190 175,183 L 207,242 C 195,250 175,268 160,280 C 145,265 137,235 137,211 Z"
+                d="M 140,210 L 180,180 L 210,242 L 188,280 L 160,280 C 145,265 137,235 140,210 Z"
                 style={getPathStyles('beef-apdari')}
                 onClick={() => onSelectCut('beef-apdari')}
                 onKeyDown={(e) => {
@@ -299,7 +299,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 양지 (Brisket/Flank) */}
               <path
-                d="M 213,244 C 250,242 290,237 327,232 C 360,228 395,222 418,220 C 418,220 412,250 408,268 C 360,278 300,283 258,283 C 210,283 170,281 162,280 L 213,244 Z"
+                d="M 188,280 L 210,242 C 250,240 290,235 330,230 L 330,180 C 360,180 395,178 425,175 L 420,242 L 445,260 C 340,280 250,288 188,280 Z"
                 style={getPathStyles('beef-yangji')}
                 onClick={() => onSelectCut('beef-yangji')}
                 onKeyDown={(e) => {
@@ -316,7 +316,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 우둔 (Rump) */}
               <path
-                d="M 433,98 C 465,104 495,110 515,115 C 522,125 528,155 530,180 C 500,180 465,178 430,175 C 430,155 430,120 433,98 Z"
+                d="M 430,98 L 430,140 L 425,175 C 460,177 495,179 530,180 C 530,155 522,125 515,115 C 495,110 465,104 430,98 Z"
                 style={getPathStyles('beef-udun')}
                 onClick={() => onSelectCut('beef-udun')}
                 onKeyDown={(e) => {
@@ -333,7 +333,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 설도 (Round) */}
               <path
-                d="M 428,177 C 460,180 495,182 528,182 C 525,200 515,250 508,272 C 480,268 450,258 423,242 C 418,230 422,200 428,177 Z"
+                d="M 425,175 C 460,177 495,179 530,180 C 525,210 510,245 485,272 L 445,260 L 420,242 L 425,175 Z"
                 style={getPathStyles('beef-seoldo')}
                 onClick={() => onSelectCut('beef-seoldo')}
                 onKeyDown={(e) => {
@@ -351,7 +351,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
               {/* 사태 (Shanks) */}
               {/* Front Shank */}
               <path
-                d="M 160,282 C 170,282 188,280 188,280 L 178,340 C 178,340 165,340 155,340 C 150,320 155,300 160,282 Z"
+                d="M 160,280 L 188,280 C 185,300 180,320 175,342 L 150,342 C 155,300 158,290 160,280 Z"
                 style={getPathStyles('beef-satae')}
                 onClick={() => onSelectCut('beef-satae')}
                 onKeyDown={(e) => {
@@ -367,7 +367,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
               />
               {/* Rear Shank */}
               <path
-                d="M 445,260 C 470,268 485,272 485,272 L 475,340 C 475,340 460,340 450,340 C 442,320 440,285 445,260 Z"
+                d="M 445,260 L 485,272 C 480,295 478,320 475,342 L 450,342 C 442,320 440,285 445,260 Z"
                 style={getPathStyles('beef-satae')}
                 onClick={() => onSelectCut('beef-satae')}
                 onKeyDown={(e) => {
@@ -441,7 +441,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 목살 (Collar) */}
               <path
-                d="M 110,130 C 110,130 135,123 170,120 C 172,135 175,170 175,190 C 175,190 145,205 130,215 C 120,205 110,185 110,170 C 110,150 110,130 110,130 Z"
+                d="M 110,130 C 130,125 150,122 170,120 L 170,135 L 175,190 L 130,215 C 118,210 110,195 110,170 Z"
                 style={getPathStyles('pork-moksal')}
                 onClick={() => onSelectCut('pork-moksal')}
                 onKeyDown={(e) => {
@@ -458,7 +458,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 항정살 (Jowl) */}
               <path
-                d="M 110,212 C 120,210 130,215 130,215 L 150,240 C 135,243 115,245 95,240 C 95,240 102,225 110,212 Z"
+                d="M 110,212 C 118,212 124,214 130,215 L 150,240 C 135,244 115,245 95,240 C 99,228 104,218 110,212 Z"
                 style={getPathStyles('pork-hangjeong')}
                 onClick={() => onSelectCut('pork-hangjeong')}
                 onKeyDown={(e) => {
@@ -475,7 +475,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 가브리살 (Back lip / Cheek) */}
               <path
-                d="M 170,120 C 170,120 185,115 210,115 C 215,115 218,125 215,135 C 200,135 185,135 170,135 L 170,120 Z"
+                d="M 170,120 C 185,116 202,115 215,115 L 215,138 C 198,136 184,135 170,135 Z"
                 style={getPathStyles('pork-gabeuri')}
                 onClick={() => onSelectCut('pork-gabeuri')}
                 onKeyDown={(e) => {
@@ -492,7 +492,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 등심 (Loin) */}
               <path
-                d="M 170,137 C 170,137 185,137 215,137 C 215,137 280,118 360,118 L 360,175 C 360,175 280,182 178,188 L 170,137 Z"
+                d="M 170,135 C 188,136 203,137 215,138 C 260,124 310,118 360,118 L 360,170 C 315,172 270,178 225,184 L 175,190 Z"
                 style={getPathStyles('pork-deungsim')}
                 onClick={() => onSelectCut('pork-deungsim')}
                 onKeyDown={(e) => {
@@ -509,7 +509,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 안심 (Tenderloin) */}
               <path
-                d="M 310,180 L 360,180 C 360,180 365,205 350,205 C 330,205 320,200 310,180 Z"
+                d="M 310,175 C 330,172 347,171 360,170 L 360,193 C 345,199 324,193 310,175 Z"
                 style={getPathStyles('pork-ansim')}
                 onClick={() => onSelectCut('pork-ansim')}
                 onKeyDown={(e) => {
@@ -526,7 +526,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 갈비 (Ribs) */}
               <path
-                d="M 178,190 L 250,190 L 250,240 C 230,240 200,240 178,240 L 178,190 Z"
+                d="M 175,190 C 200,187 225,184 250,181 L 250,240 L 175,240 Z"
                 style={getPathStyles('pork-galbi')}
                 onClick={() => onSelectCut('pork-galbi')}
                 onKeyDown={(e) => {
@@ -543,7 +543,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 삼겹살 (Pork Belly) */}
               <path
-                d="M 250,190 L 360,190 L 360,255 C 320,258 280,258 250,255 Z M 178,242 L 250,242 L 250,270 C 210,270 190,270 178,270 Z"
+                d="M 175,240 L 250,240 L 250,181 C 270,178 290,176 310,175 C 324,193 345,199 360,193 L 360,255 C 320,263 280,268 250,270 L 175,270 Z"
                 style={getPathStyles('pork-samgyeop')}
                 onClick={() => onSelectCut('pork-samgyeop')}
                 onKeyDown={(e) => {
@@ -560,7 +560,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 앞다리 (Picnic Shoulder) */}
               <path
-                d="M 130,215 L 178,190 L 178,260 C 160,268 140,272 125,275 C 120,260 125,235 130,215 Z"
+                d="M 130,215 L 175,190 L 175,240 L 175,270 C 160,272 140,274 125,275 C 120,255 122,235 130,215 Z"
                 style={getPathStyles('pork-apdari')}
                 onClick={() => onSelectCut('pork-apdari')}
                 onKeyDown={(e) => {
@@ -577,7 +577,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
 
               {/* 뒷다리 (Ham) */}
               <path
-                d="M 360,118 C 390,118 425,120 450,135 C 460,150 460,225 450,240 C 420,248 390,255 360,255 L 360,118 Z"
+                d="M 360,118 C 390,118 425,120 450,135 C 460,150 460,222 450,240 C 440,248 430,254 420,258 L 390,258 L 360,255 L 360,193 L 360,170 Z"
                 style={getPathStyles('pork-dwdari')}
                 onClick={() => onSelectCut('pork-dwdari')}
                 onKeyDown={(e) => {
@@ -595,7 +595,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
               {/* 사태 (Shank) */}
               {/* Front Shank */}
               <path
-                d="M 125,275 C 135,275 160,275 160,278 L 150,330 L 125,330 Z"
+                d="M 125,275 C 137,276 150,277 160,278 L 150,330 L 125,330 Z"
                 style={getPathStyles('pork-satae')}
                 onClick={() => onSelectCut('pork-satae')}
                 onKeyDown={(e) => {
@@ -611,7 +611,7 @@ export const MeatDiagram: React.FC<MeatDiagramProps> = ({
               />
               {/* Rear Shank */}
               <path
-                d="M 390,258 C 405,258 420,258 420,258 L 415,330 L 390,330 Z"
+                d="M 390,258 L 420,258 L 415,330 L 390,330 Z"
                 style={getPathStyles('pork-satae')}
                 onClick={() => onSelectCut('pork-satae')}
                 onKeyDown={(e) => {

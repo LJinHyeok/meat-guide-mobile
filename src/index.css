@@ -1,35 +1,33 @@
 :root {
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   
-  /* Color Palette (Deep Luxury Dark Mode First) */
-  --bg-primary: #090d16;
-  --bg-secondary: #111827;
-  --bg-tertiary: #1f2937;
-  --bg-card: rgba(17, 24, 39, 0.7);
+  /* Apple Light Card Aesthetic Color Palette */
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #e8e8ed;
+  --bg-tertiary: #ffffff;
+  --bg-card: #ffffff;
   
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #1d1d1f;
+  --text-secondary: #48484a;
+  --text-muted: #86868b;
   
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-active: rgba(255, 255, 255, 0.2);
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-active: rgba(0, 0, 0, 0.15);
   
-  --color-accent: #ff4757; /* Deep coral for beef */
-  --color-pork: #ff7883; /* Soft rose for pork */
-  --color-selected: #ff4757;
-  --color-highlighted: #ffd32a; /* Gold/yellow for usage search */
-  --color-default: #374151; /* Charcoal for unselected cuts */
-  --color-dimmed: #1f2937;
+  --color-accent: #ff3b30; /* Apple Red */
+  --color-pork: #ff2d55; /* Apple Pink */
   
-  --glow-selected: 0 0 15px rgba(255, 71, 87, 0.5);
-  --glow-highlight: 0 0 12px rgba(255, 211, 42, 0.4);
+  --color-selected: #ff3b30;
+  --color-highlighted: #ff9500; /* Apple Orange for matches */
+  --color-default: #e5e5ea; /* Apple Light Gray for unselected */
+  --color-dimmed: #f2f2f7;
   
-  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --radius-lg: 16px;
-  --radius-md: 10px;
-  --radius-sm: 6px;
+  --shadow-premium: 0 12px 30px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.015);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
   
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 * {
@@ -44,11 +42,11 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.5;
   overflow-x: hidden;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(255, 71, 87, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(255, 211, 42, 0.03) 0%, transparent 40%);
+    radial-gradient(circle at 10% 20%, rgba(255, 59, 48, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 149, 0, 0.02) 0%, transparent 40%);
 }
 
 #root {
@@ -74,4 +72,12 @@ a {
 
 button {
   font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Base custom styles for interactive states */
+*:focus-visible {
+  outline: 2.5px solid #0071e3;
+  outline-offset: 2px;
 }

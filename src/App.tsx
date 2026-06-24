@@ -158,7 +158,7 @@ function App() {
                   const isSelected = selectedCutId === cut.id;
                   const isHighlighted = highlightedCutIds.includes(cut.id);
                   let className = 'subcut-badge clickable-region';
-                  if (isSelected) className += ' active-selected';
+                  if (isSelected) className += ` active-selected ${meatType}`;
                   else if (highlightedCutIds.length > 0 && isHighlighted) className += ' active-highlighted';
                   
                   return (
@@ -166,25 +166,6 @@ function App() {
                       key={cut.id}
                       className={className}
                       onClick={() => handleSelectCut(cut.id)}
-                      style={{
-                        cursor: 'pointer',
-                        border: isSelected ? '1px solid var(--color-selected)' : '1px solid var(--color-border)',
-                        background: isSelected 
-                          ? 'var(--color-selected)' 
-                          : isHighlighted 
-                            ? 'rgba(255, 211, 42, 0.15)' 
-                            : 'rgba(255, 255, 255, 0.03)',
-                        color: isSelected 
-                          ? '#ffffff' 
-                          : isHighlighted 
-                            ? 'var(--color-highlighted)' 
-                            : 'var(--text-primary)',
-                        padding: '6px 12px',
-                        borderRadius: '20px',
-                        fontSize: '13px',
-                        fontWeight: isSelected || isHighlighted ? 'bold' : 'normal',
-                        transition: 'all 0.2s ease',
-                      }}
                     >
                       {cut.name}
                     </button>

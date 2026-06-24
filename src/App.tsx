@@ -1,17 +1,33 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { beefCuts, porkCuts } from './data/meatData';
 import { MeatDiagram } from './components/MeatDiagram';
 import { CutDetail } from './components/CutDetail';
 import { SearchBar } from './components/SearchBar';
 import { UsageTabs } from './components/UsageTabs';
-import { Flame, ShieldAlert } from 'lucide-react';
+import { Flame, ShieldAlert, WifiOff } from 'lucide-react';
 import './App.css';
+
 
 function App() {
   const [meatType, setMeatType] = useState<'beef' | 'pork'>('beef');
   const [selectedCutId, setSelectedCutId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => setIsOffline(true);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
 
   // Handle switching between beef and pork
   const handleMeatTypeChange = (type: 'beef' | 'pork') => {
@@ -74,6 +90,11 @@ function App() {
         <div className="logo-section">
           <Flame className="logo-icon" size={28} fill="currentColor" />
           <h1 className="app-title">고기 부위 도감 (Meat Guide)</h1>
+          {isOffline && (
+            <span className="offline-badge" title="오프라인 모드 실행 중">
+              <WifiOff size={12} /> 오프라인
+            </span>
+          )}
         </div>
         <p className="app-subtitle">부위별 상세 정보, 구매 가이드 및 요리 팁</p>
       </header>
@@ -189,10 +210,7 @@ function App() {
       {/* FOOTER */}
       <footer className="app-footer">
         <p>© 2026 Meat Guide Mobile. Designed with Korean UI & Capacitor.</p>
-        <p>
-          Android Build Tool powered by GitHub Actions. 
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="footer-link">Repository</a>
-        </p>
+        <p>오프라인 도감 앱입니다. 앱 이용 중 개인정보를 수집하거나 외부 서버로 전송하지 않습니다.</p>
       </footer>
     </div>
   );

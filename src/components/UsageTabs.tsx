@@ -6,7 +6,7 @@ interface UsageTabsProps {
   onSelectCategory: (category: string) => void;
 }
 
-export const categories = [
+const categories = [
   { id: 'all', name: '전체 보기', icon: ChefHat },
   { id: 'grill', name: '구이 & 스테이크', icon: Flame },
   { id: 'soup', name: '국 & 탕 & 찌개', icon: Soup },

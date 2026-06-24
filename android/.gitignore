@@ -4,7 +4,6 @@
 *.apk
 *.aar
 *.ap_
-*.aab
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -52,19 +51,9 @@ captures/
 # Comment next line if keeping position of elements in Navigation Editor is relevant for you
 .idea/navEditor.xml
 
-# Keystore files
-*.jks
-*.keystore
-*.p12
-*.pfx
-keystores/
-
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 .cxx/
-
-# Google Services (e.g. APIs or Firebase)
-# google-services.json
 
 # Freeline
 freeline.py

@@ -90,7 +90,10 @@ cd android
 
 ## 🌐 GitHub 업로드 / 무료 웹 공개
 
-Google Play 등록 없이 GitHub에만 올릴 경우 GitHub Pages로 무료 웹 배포할 수 있습니다.
+GitHub 저장소에 올려 두 가지 방식으로 사용할 수 있습니다.
+
+- 웹: GitHub Pages 주소로 바로 접속
+- Android: 저장소에 포함된 APK 파일을 다운로드해서 직접 설치
 
 ### 1. GitHub에서 새 저장소 생성
 - 추천 저장소 이름: `meat-guide-mobile`
@@ -114,88 +117,24 @@ git push -u origin main
 https://<GitHub아이디>.github.io/meat-guide-mobile/
 ```
 
-주의: `android/local.properties`, `android/keystores/`, `node_modules/`, `dist/`, Android 빌드 산출물은 Git에 올라가지 않도록 제외되어 있습니다.
+### 4. APK 파일 바로 설치
 
----
+GitHub 저장소에서 아래 파일을 다운로드해 Android 폰에 설치하면 됩니다.
 
-## 🛒 Google Play Store 출시 및 릴리즈 빌드 (Release Signing & AAB)
-
-Google Play Store에 배포하기 위해 릴리즈용 App Bundle(AAB)을 빌드하고 안전하게 서명하는 방법입니다.
-
-### 1. 앱 서명 키(Keystore) 생성 및 보관
-출시용 앱은 고유한 업로드 키로 서명되어야 합니다. 현재 로컬 개발 장치에는 아래 업로드 키가 생성되어 있습니다.
-
-- Keystore: `android/keystores/meatguide-upload.jks`
-- Alias: `meatguide-upload`
-- 설정 파일: `android/local.properties`
-- SHA-256: `7D:2F:6D:7C:B6:34:4E:F1:78:2C:CD:25:17:04:9D:BA:A4:BD:F9:CE:3A:0F:10:C8:1A:A1:5A:FE:45:BD:EE:25`
-
-> ⚠️ **중요 (보안 경고)**: `android/keystores/`와 `android/local.properties`는 `.gitignore`로 제외되어 있습니다. 이 파일들과 비밀번호는 절대 Git 저장소에 커밋하지 말고, 별도 안전한 장소에 백업하십시오. 분실하면 Google Play 앱 업데이트가 어려워질 수 있습니다.
-
-### 2. 빌드 스크립트 보안 서명 설정 (Secret Injection)
-프로젝트 내의 비밀 값을 코드에 넣지 않으면서 릴리즈 빌드 시점에 자동 서명되도록 `android/app/build.gradle`이 구성되어 있습니다.
-
-#### 방법 A: `local.properties` 사용 (현재 로컬 설정)
-`android/local.properties`는 아래 형식입니다. 비밀번호 값은 로컬 파일에만 두고 커밋하지 않습니다.
-```properties
-sdk.dir=/home/jinhy/Android/Sdk
-RELEASE_STORE_FILE=keystores/meatguide-upload.jks
-RELEASE_STORE_PASSWORD=로컬에만_보관
-RELEASE_KEY_ALIAS=meatguide-upload
-RELEASE_KEY_PASSWORD=로컬에만_보관
+```text
+release/meat-guide-mobile.apk
 ```
 
-#### 방법 B: 시스템 환경 변수 사용 (CI/CD 환경 설정)
-CI에서 빌드할 경우 아래 값을 GitHub Actions Secrets 등으로 주입할 수 있습니다.
-```bash
-export RELEASE_STORE_FILE="/absolute/or/android-relative/path/to/upload-key.jks"
-export RELEASE_STORE_PASSWORD="사용자가지정한스토어비밀번호"
-export RELEASE_KEY_ALIAS="meatguide-upload"
-export RELEASE_KEY_PASSWORD="사용자가지정한키비밀번호"
-```
+설치 순서:
+1. GitHub 저장소에서 `release/meat-guide-mobile.apk` 파일을 누릅니다.
+2. 우측 상단 또는 파일 화면의 `Download raw file` / `Raw` / 다운로드 버튼으로 APK를 받습니다.
+3. Android 폰에서 APK를 열면 “알 수 없는 앱 설치” 허용 안내가 나올 수 있습니다.
+4. 브라우저 또는 파일 관리자에 대해 “이 출처 허용”을 켠 뒤 설치합니다.
+5. 설치 후 앱 이름 `고기 도감`을 실행합니다.
 
-> ℹ️ **참고**: `local.properties`나 환경 변수가 없는 협업 환경에서는 서명되지 않은 AAB 빌드가 생성될 수 있습니다. Google Play 업로드에는 현재 로컬처럼 서명값이 설정된 환경에서 만든 AAB를 사용하십시오.
+이 APK는 스토어 배포용이 아니라 직접 설치용 debug APK입니다. 개인 테스트/공유용으로 쓰면 됩니다.
 
-### 3. 프로덕션 빌드 (AAB - Android App Bundle)
-Google Play Store 업로드용 `.aab` 파일을 생성하려면 아래 명령을 사용합니다.
-```bash
-# package.json 스크립트 실행 (환경변수나 local.properties가 로드되어 서명됨)
-npm run android:aab
-```
-또는 직접 빌드할 수 있습니다.
-```bash
-cd android
-./gradlew bundleRelease
-```
-서명된 릴리즈 AAB 파일 경로:
-`android/app/build/outputs/bundle/release/app-release.aab`
-이 AAB 파일을 Google Play Console에 업로드하시면 됩니다.
-
-### 4. Google Play Console 등록 절차
-1. **Google 개발자 계정 가입** (등록비 25달러 소요)
-2. **새 앱 생성**: 기본 언어(한국어) 선택, 앱 이름("고기부위 가이드") 설정.
-3. **설문조사 완료**: 타겟층 설정, 개인정보처리방침 URL 등록, 콘텐츠 등급 평가 설문 작성.
-4. **출시 트랙 선택**:
-   - **내부 테스트(Internal Testing)**: 신뢰할 수 있는 소수의 테스터(최대 100명) 대상 즉시 배포 및 작동 확인 트랙. (권장)
-   - **공개 테스트(Open/Closed Testing)**: 정식 출시 전 피드백을 수집하기 위한 베타 테스트 트랙.
-   - **프로덕션(Production)**: 일반 사용자들이 다운로드할 수 있는 마켓 정식 배포 트랙.
-5. **App Bundle 업로드**: 서명된 `app-release.aab` 파일을 릴리스 대시보드에 업로드.
-6. **스토어 등록 정보 설정**: 앱 스크린샷(휴대폰/태블릿), 그래픽 이미지(1024x500), 고해상도 앱 아이콘(512x512) 및 짧은/자세한 앱 설명 등록.
-7. **검토 및 심사 요청**: 모든 요구사항 제출 완료 후 Google 담당자의 검토를 거쳐 최대 수일 내 승인 후 스토어에 라이브 배포됩니다.
-
-### 5. 이 저장소에 준비된 Play Store 제출 자료
-
-아래 파일을 Play Console 입력값과 개인정보처리방침 웹페이지 초안으로 사용하십시오.
-
-- `play-store/store_listing_ko.md`: 앱 이름, 짧은 설명, 자세한 설명
-- `play-store/privacy_policy.md`: 개인정보처리방침 웹 게시용 초안
-- `play-store/data_safety_answers.md`: 데이터 보안 설문 답변
-- `play-store/play_store_assets.md`: 콘텐츠 등급, 20인 테스트, 출시 전 체크리스트 포함 통합 문서
-- `play-store/assets/app_icon_512.png`: Play Console 고해상도 앱 아이콘 초안
-- `play-store/assets/feature_graphic_1024x500.png`: 피처 그래픽 초안
-- `play-store/assets/screenshot_1_1080x1920.png`, `screenshot_2_1080x1920.png`: 휴대폰 스크린샷 초안
-
-현재 앱은 오프라인 도감 정책에 맞게 외부 폰트 호출, 외부 링크, Android `INTERNET` 권한을 제거했습니다. 회원가입, 로그인, 광고 SDK, 분석 SDK, 위치/카메라/연락처/저장소 권한도 사용하지 않습니다.
+주의: `node_modules/`, `dist/`, Android 중간 빌드 산출물은 Git에 올라가지 않도록 제외되어 있습니다. 배포용으로 복사한 APK만 `release/meat-guide-mobile.apk` 경로에 포함합니다.
 
 ---
 

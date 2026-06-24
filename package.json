@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "android:sync": "npm run build && npx cap sync android",
     "android:open": "npm run android:sync && npx cap open android",
-    "android:apk": "npm run android:sync && cd android && JAVA_HOME=$HOME/.local/jdks/jdk-21 ANDROID_HOME=$HOME/Android/Sdk ANDROID_SDK_ROOT=$HOME/Android/Sdk ./gradlew assembleDebug",
-    "android:aab": "npm run android:sync && cd android && JAVA_HOME=$HOME/.local/jdks/jdk-21 ANDROID_HOME=$HOME/Android/Sdk ANDROID_SDK_ROOT=$HOME/Android/Sdk ./gradlew bundleRelease"
+    "android:apk": "npm run android:sync && cd android && JAVA_HOME=$HOME/.local/jdks/jdk-21 ANDROID_HOME=$HOME/Android/Sdk ANDROID_SDK_ROOT=$HOME/Android/Sdk ./gradlew assembleDebug"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",
